@@ -3,7 +3,7 @@ package com.vinicius.dscommerce.controllers;
 import com.vinicius.dscommerce.dto.ProductDTO;
 
 import com.vinicius.dscommerce.services.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;git 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -42,5 +42,11 @@ public class ProductController {
     public ResponseEntity<ProductDTO> update(@PathVariable Long id, @RequestBody ProductDTO dto) {
         dto = service.update(id, dto);
         return ResponseEntity.ok(dto);
+    }
+
+    @DeleteMapping (value = "/{id}")
+    public ResponseEntity<Void> update(@PathVariable Long id) {
+        service.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }
