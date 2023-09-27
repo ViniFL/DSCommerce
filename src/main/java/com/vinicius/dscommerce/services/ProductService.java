@@ -67,7 +67,6 @@ public class ProductService {
         }
     }
 
-
     private void copyDtoToEntity(ProductDTO dto, Product entity) {
         entity.setName(dto.getName());
         entity.setDescription(dto.getDescription());
